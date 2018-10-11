@@ -10,6 +10,15 @@ class Ship
 
     private $strength = 0;
 
+    private $underRepair;
+
+    public function __construct($name)
+    {
+        $this->name = $name;
+        // randomly put this ship under repair
+        $this->underRepair = mt_rand(1, 100) < 30;
+    }
+
     public function sayHello()
     {
         echo 'Hello!';
@@ -83,5 +92,10 @@ class Ship
     public function setName($name)
     {
         $this->name = $name;
+    }
+
+    public function isFunctional()
+    {
+        return !$this->underRepair;
     }
 }
