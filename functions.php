@@ -1,33 +1,19 @@
 <?php
 
+require __DIR__.'/lib/Ship.php';
+
 function get_ships()
 {
-    return array(
-        'starfighter' => array(
-            'name' => 'Jedi Starfighter',
-            'weapon_power' => 5,
-            'jedi_factor' => 15,
-            'strength' => 30,
-        ),
-        'cloakshape_fighter' => array(
-            'name' => 'CloakShape Fighter',
-            'weapon_power' => 2,
-            'jedi_factor' => 2,
-            'strength' => 70,
-        ),
-        'super_star_destroyer' => array(
-            'name' => 'Super Star Destroyer',
-            'weapon_power' => 70,
-            'jedi_factor' => 0,
-            'strength' => 500,
-        ),
-        'rz1_a_wing_interceptor' => array(
-            'name' => 'RZ-1 A-wing interceptor',
-            'weapon_power' => 4,
-            'jedi_factor' => 4,
-            'strength' => 50,
-        ),
-    );
+    $ships = array();
+
+    $ship1 = new Ship();
+    $ship1->name = 'Jedi Starfighter';
+    $ship1->weaponPower = 5;
+    $ship1->jediFactor = 15;
+    $ship1->strength = 30;
+    $ships['starfighter'] = $ship1;
+
+    return $ships;
 }
 
 /**
