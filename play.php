@@ -48,7 +48,7 @@ class Ship
     }
 }
 
-function printShipSummary($someShip)
+function printShipSummary(Ship $someShip)
 {
     echo 'Ship Name: '.$someShip->getName();
     echo '<hr/>';
