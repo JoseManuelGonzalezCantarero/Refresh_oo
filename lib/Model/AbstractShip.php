@@ -1,6 +1,6 @@
 <?php
 
-class AbstractShip
+abstract class AbstractShip
 {
     private $id;
 
@@ -95,5 +95,11 @@ class AbstractShip
     {
         $this->id = $id;
     }
+
+    abstract public function getJediFactor();
+
+    abstract public function getType();
+
+    abstract public function isFunctional();
 }
 
