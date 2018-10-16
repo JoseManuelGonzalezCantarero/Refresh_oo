@@ -2,6 +2,7 @@
 
 namespace Service;
 
+use Model\BountyHunterShip;
 use Model\RebelShip;
 use Model\Ship;
 use Model\AbstractShip;
@@ -29,6 +30,9 @@ class ShipLoader
             foreach ($shipsData as $shipData) {
                 $ships[] = $this->createShipFromData($shipData);
             }
+
+            // Bobba Fett's ship
+            $ships[] = new BountyHunterShip('Slave I');
 
             return new ShipCollection($ships);
         } catch (\PDOException $e) {
