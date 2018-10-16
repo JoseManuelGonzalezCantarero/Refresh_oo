@@ -2,8 +2,6 @@
 
 namespace Model;
 
-use Traversable;
-
 class ShipCollection implements \ArrayAccess, \IteratorAggregate
 {
 
