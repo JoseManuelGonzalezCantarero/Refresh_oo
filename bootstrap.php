@@ -1,5 +1,12 @@
 <?php
 
+spl_autoload_register(function($className){
+    $path = __DIR__.'/lib/'.str_replace('\\', '/', $className).'.php';
+    if (file_exists($path)) {
+        require $path;
+    }
+});
+
 $configuration = array(
     'db_dsn' => 'mysql:host=localhost;dbname=oo_battle',
     'db_user' => 'root',
@@ -9,7 +16,6 @@ $configuration = array(
 require_once __DIR__.'/lib/Service/Container.php';
 require_once __DIR__.'/lib/Service/ShipStorageInterface.php';
 require_once __DIR__.'/lib/Service/PdoShipStorage.php';
-require_once __DIR__.'/lib/Service/BattleManager.php';
 require_once __DIR__.'/lib/Service/ShipLoader.php';
 require_once __DIR__.'/lib/Service/JsonFileShipStorage.php';
 require_once __DIR__.'/lib/Model/AbstractShip.php';

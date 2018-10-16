@@ -1,5 +1,7 @@
 <?php
 
+use Service\BattleManager;
+
 class Container
 {
     private $configuration;
@@ -40,7 +42,7 @@ class Container
     }
 
     /**
-     * @return \BattleManager
+     * @return \Service\BattleManager
      */
     public function getBattleManager()
     {
