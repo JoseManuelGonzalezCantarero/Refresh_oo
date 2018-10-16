@@ -98,6 +98,16 @@ abstract class AbstractShip
         $this->id = $id;
     }
 
+    public function __toString()
+    {
+        return $this->getName();
+    }
+
+    public function __get($propertyName)
+    {
+        return $this->$propertyName;
+    }
+
     abstract public function getJediFactor();
 
     abstract public function getType();
