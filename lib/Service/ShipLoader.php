@@ -1,5 +1,11 @@
 <?php
 
+namespace Service;
+
+use Model\RebelShip;
+use Model\Ship;
+use Model\AbstractShip;
+
 class ShipLoader
 {
     private $shipStorage;
@@ -10,7 +16,7 @@ class ShipLoader
     }
 
     /**
-     * @return \AbstractShip[]
+     * @return AbstractShip[]
      */
     public function getShips()
     {
@@ -28,7 +34,7 @@ class ShipLoader
     /**
      * @param $id
      *
-     * @return null|\AbstractShip
+     * @return null|AbstractShip
      */
     public function findOneById($id)
     {

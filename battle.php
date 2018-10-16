@@ -1,5 +1,6 @@
 <?php
 require __DIR__.'/bootstrap.php';
+use Service\Container;
 
 $container = new Container($configuration);
 

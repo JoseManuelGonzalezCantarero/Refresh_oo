@@ -2,6 +2,9 @@
 
 namespace Service;
 
+use Model\BattleResult;
+use Model\AbstractShip;
+
 class BattleManager
 {
     // normal battle mode
@@ -14,7 +17,7 @@ class BattleManager
     /**
      * Our complex fighting algorithm!
      *
-     * @return \BattleResult
+     * @return BattleResult
      */
     public function battle(AbstractShip $ship1, $ship1Quantity, AbstractShip $ship2, $ship2Quantity, $battleType)
     {
