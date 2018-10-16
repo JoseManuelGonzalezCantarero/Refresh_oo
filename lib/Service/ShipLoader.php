@@ -30,8 +30,8 @@ class ShipLoader
             }
 
             return $ships;
-        } catch (\Exception $e) {
-            trigger_error('Exception! '.$e->getMessage());
+        } catch (\PDOException $e) {
+            trigger_error('Database Exception! '.$e->getMessage());
             // if all else fails, just return an empty array
             return [];
         }
