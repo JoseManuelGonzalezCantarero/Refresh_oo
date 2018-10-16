@@ -5,6 +5,7 @@ namespace Service;
 use Model\RebelShip;
 use Model\Ship;
 use Model\AbstractShip;
+use Model\ShipCollection;
 
 class ShipLoader
 {
@@ -16,7 +17,7 @@ class ShipLoader
     }
 
     /**
-     * @return AbstractShip[]
+     * @return ShipCollection
      */
     public function getShips()
     {
@@ -29,7 +30,7 @@ class ShipLoader
                 $ships[] = $this->createShipFromData($shipData);
             }
 
-            return $ships;
+            return new ShipCollection($ships);
         } catch (\PDOException $e) {
             trigger_error('Database Exception! '.$e->getMessage());
             // if all else fails, just return an empty array
