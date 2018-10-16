@@ -22,13 +22,19 @@ class ShipLoader
     {
         $ships = array();
 
-        $shipsData = $this->shipStorage->fetchAllShipsData();
+        try {
+            $shipsData = $this->shipStorage->fetchAllShipsData();
 
-        foreach ($shipsData as $shipData) {
-            $ships[] = $this->createShipFromData($shipData);
+            foreach ($shipsData as $shipData) {
+                $ships[] = $this->createShipFromData($shipData);
+            }
+
+            return $ships;
+        } catch (\Exception $e) {
+            trigger_error('Exception! '.$e->getMessage());
+            // if all else fails, just return an empty array
+            return [];
         }
-
-        return $ships;
     }
 
     /**
